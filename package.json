@@ -19,5 +19,6 @@
   "homepage": "https://github.com/tomasdiaz83/READMEGenerator#readme",
   "dependencies": {
     "inquirer": "^9.1.2"
-  }
+  },
+  "type": "module"
 }
