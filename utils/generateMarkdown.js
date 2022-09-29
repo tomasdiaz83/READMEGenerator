@@ -20,7 +20,7 @@ function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
-const generateMarkdown = ({ title, description, install, usage, contribution, testing, gitHub, email, license }) => 
+const generateMarkdown = (title, description, install, usage, contribution, test, gitHub, email, license) => 
     `# ${title} #${renderLicenseBadge(license)}
 
 ## Description
@@ -50,13 +50,11 @@ For more information: ${renderLicenseLink(license)}
 ${contribution}
 
 ## Guidelines for Testing
-${testing}
+${test}
 
 ## Further Questions
 Please contact me with any questions:
 - GitHub: ${gitHub}
 - Email: ${email}`;
 
-export default {
-    generateMarkdown
-}
+export default generateMarkdown

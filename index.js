@@ -1,8 +1,8 @@
-const answers = { title: "test", description: "test", install: "test", usage: "test", contribution: "test", testing: "test", gitHub: "test", email: "test", license: "test" }
+//const answers = { title: "test", description: "test", install: "test", usage: "test", contribution: "test", testing: "test", gitHub: "test", email: "test", license: "test" }
 
 // TODO: Include packages needed for this application
 import generateMarkdown from './utils/generateMarkdown.js';
-import writeFile from 'fs/promises';
+import fs from 'fs';
 import inquirer from 'inquirer';
 
 // TODO: Create an array of questions for user input
@@ -87,10 +87,15 @@ const init = () => {
     inquirer
         .prompt(questions)
         .then((answers) => {
-            console.log(answers);
+            let { title, description, install, usage, contribution, test, gitHub, email, license } = answers;
+            fs.writeFile('./GeneratedREADME/README.md', generateMarkdown(title, description, install, usage, contribution, test, gitHub, email, license), err => {
+                if (err) {
+                    console.error(err);
+                } else {
+                    console.log("README successfully created!")
+                }
+            })  
         })
-
-    // writeFile('./GeneratedREADME/README.md', generateMarkdown(answers))
 }
 
 // Function call to initialize app
