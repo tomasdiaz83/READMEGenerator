@@ -87,8 +87,8 @@ const init = () => {
     inquirer
         .prompt(questions)
         .then((answers) => {
-            let { title, description, install, usage, contribution, test, gitHub, email, license } = answers;
-            fs.writeFile('./generatedREADME/README.md', generateMarkdown(title, description, install, usage, contribution, test, gitHub, email, license), err => {
+            let { name, title, description, install, usage, contribution, test, gitHub, email, license } = answers;
+            fs.writeFile('./generatedREADME/README.md', generateMarkdown(name, title, description, install, usage, contribution, test, gitHub, email, license), err => {
                 if (err) {
                     console.error(err);
                 } else {
