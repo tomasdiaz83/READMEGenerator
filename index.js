@@ -88,7 +88,7 @@ const init = () => {
         .prompt(questions)
         .then((answers) => {
             let { title, description, install, usage, contribution, test, gitHub, email, license } = answers;
-            fs.writeFile('./GeneratedREADME/README.md', generateMarkdown(title, description, install, usage, contribution, test, gitHub, email, license), err => {
+            fs.writeFile('./generatedREADME/README.md', generateMarkdown(title, description, install, usage, contribution, test, gitHub, email, license), err => {
                 if (err) {
                     console.error(err);
                 } else {
