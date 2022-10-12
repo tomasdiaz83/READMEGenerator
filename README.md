@@ -1,4 +1,4 @@
-# The Date Night Maker
+# README Generator
 An application to generate a high quality README
 ## Description
 The README generator allows the user to create a high-quality README through their terminal, utilizing nodeJS to initiate the application, and the inquirer NPM to receive data.
